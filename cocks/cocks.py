@@ -24,7 +24,7 @@ random_state = gmpy2.random_state()
 logger = logging.getLogger()
 
 class CocksPKG:
-    def __init__(self, n_len=2048, f=sha512):
+    def __init__(self, n_len=2048):
         """
         Initialises the Cocks public key generator (PKG).
 
@@ -33,7 +33,7 @@ class CocksPKG:
         f : Hash function for iteratively hashing ID values.
         """
         self.n_len = n_len
-        self.f = f
+        self.f = sha512
         self.setup()
 
     def _gen_prime(self, n_bits):
